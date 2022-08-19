@@ -1,0 +1,48 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.left{
+    width: 30%;
+}
+.right {
+    width: 80%;
+}
+.bar-items {
+    margin: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.bar {
+    font-size: 20px;
+    padding: 50px;
+    display: inline;
+    border-bottom: 1px solid #cecece;
+}
+.right-items {
+    padding: 0;
+    margin: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+
+}
+.rightTitle {
+    padding: 0px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 25px;
+    border: 1px solid #dadada;
+    height: 100px;
+    width: 70%;
+    /*padding: 10px 30px;*/
+
+
+}
+
+
+

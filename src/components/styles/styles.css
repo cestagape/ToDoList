@@ -11,14 +11,13 @@
     width: 80%;
 }
 .bar-items {
-    margin: 25px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
 }
 .bar {
     font-size: 20px;
-    padding: 50px;
+    padding: 20px;
     display: inline;
     border-bottom: 1px solid #cecece;
 }

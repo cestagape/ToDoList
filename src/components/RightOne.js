@@ -28,7 +28,7 @@ class RightOne extends React.Component{
         this.setState({
             currentNote: note
         })
-        this.props.callback(note)
+        this.props.callback(note);
     }
 
     render() {
@@ -50,7 +50,7 @@ class RightOne extends React.Component{
         } else {
             return(
                 <div className="right-items">
-                    <label>Выберите</label>
+                    <label></label>
                 </div>
             )
         }

@@ -32,6 +32,7 @@ class App extends React.Component {
                 currentNote: currNote
             }
         })
+
     }
     onNoteChanged(note) {
         console.log("fromcallback:")
@@ -48,14 +49,15 @@ class App extends React.Component {
             }
         })
     }
+
         render() {
             let noteComponent = this.state.notesData.map(item => <LeftOne key={item.id} note={item}/>)
             console.log(noteComponent)
             return (
                 <div className="container">
                     <div className="left">
+                        <button className="createNewTaskButton" onClick={this.newNote}>+</button>
                         {noteComponent}
-                        <button onClick={this.newNote}>Новая заметка</button>
                     </div>
                     <div className="right">
                         <RightOne key={this.state.notesData.length} currentNote={this.state.currentNote} callback={this.onNoteChanged.bind(this)}/>

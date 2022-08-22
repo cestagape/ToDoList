@@ -80,10 +80,14 @@
 }
 .leftDescription {
     text-align: left;
-    margin-left: 16%;
-    margin-right: 16%;
+    margin-left: 15%;
+    margin-right: 10%;
+    padding: 10px;
+    white-space: nowrap;
+    overflow: hidden;
     text-overflow: ellipsis;
-
+    font-size: 16px;
+    color: #617790;
 }
 .createNewTaskButton {
     margin-left: 10%;
@@ -117,9 +121,9 @@
     margin-left: 10%;
     margin-right:10%;
     border-bottom: 1px solid #cecece;
-    padding: 10px; /* Поля вокруг текста */
-    white-space: nowrap; /* Текст не переносится */
-    overflow: hidden; /* Обрезаем всё за пределами блока */
+    padding: 10px;
+    white-space: nowrap;
+    overflow: hidden;
     text-overflow: ellipsis;
 }
 .barButton:focus {

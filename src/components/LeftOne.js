@@ -4,12 +4,17 @@ import "./styles/styles.css";
 function LeftOne(props) {
     return(
         <div className="bar-items">
-            <button className="barButton" >
+            <button className="barButton" /*onClick={showNote()*/>
                 <div className="bar">
                     <input type="checkbox" key={props.note.id} defaultChecked={props.note.isChecked}/>
-                    <label>{props.note.name}</label>
-                </div>
+                    <strong> {props.note.name}</strong>
+                    <div className="leftDescription">
+                        {props.note.description}
+                    </div>
+                    </div>
             </button>
         </div>
     )}
+
+
 export default LeftOne

@@ -19,13 +19,14 @@
     flex-direction: column;
     justify-content: flex-start;
     height: 100px;
-    align-text: left;
+    text-overflow: ellipsis;
 }
 .bar {
     font-size: 20px;
     padding: 20px;
     display: inline;
     align-items: left;
+
 }
 .right-items {
     padding: 0;
@@ -77,6 +78,13 @@
     font-size: 20px;
     font-weight: bold;
 }
+.leftDescription {
+    text-align: left;
+    margin-left: 16%;
+    margin-right: 16%;
+    text-overflow: ellipsis;
+
+}
 .createNewTaskButton {
     margin-left: 10%;
     margin-right: 10%;
@@ -102,13 +110,17 @@
 
 }
 .barButton {
+    text-align: start;
     background-color: rgba(28,28,28,0);
     border: 1px;
     height: 100%;
     margin-left: 10%;
     margin-right:10%;
     border-bottom: 1px solid #cecece;
-
+    padding: 10px; /* Поля вокруг текста */
+    white-space: nowrap; /* Текст не переносится */
+    overflow: hidden; /* Обрезаем всё за пределами блока */
+    text-overflow: ellipsis;
 }
 .barButton:focus {
     background-color: skyblue;

@@ -54,7 +54,8 @@ class RightOne extends React.Component{
             )
         }
     }
-
+    // showNote() {
+    // }
 }
 
 export default RightOne;

@@ -50,9 +50,9 @@ class App extends React.Component {
         })
     }
     onNoteSelected(id){
-        this.setState(prevState=>{
+        this.setState(prevState => {
             let upd = prevState.currentNote
-            upd = this.state.notesData.filter(note=>note.id===id)
+            upd = this.state.notesData.filter(note=>note.id === id)
             console.log(upd)
             return {
                 notesData: this.state.notesData,

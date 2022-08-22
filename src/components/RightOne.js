@@ -35,10 +35,10 @@ class RightOne extends React.Component{
             return(
                 <div className="right-items">
                     <div className="rightTitle">
-                        <input className="inputs" type="text" name="name" placeholder="Введите название.." value={this.props.currentNote.name || this.state.name} onChange={this.saveNote}/>
+                        <input className="inputs" type="text" name="name" placeholder="Введите название.." value={this.state.name} onChange={this.saveNote}/>
                     </div>
                     <div className="rightDescription">
-                        <input className="input-description" type="text" name="description" placeholder="Введите описание.." value={this.props.currentNote.description || this.state.description} onChange={this.saveNote}/>
+                        <input className="input-description" type="text" name="description" placeholder="Введите описание.." value={this.state.description} onChange={this.saveNote}/>
                     </div>
                     <div className="rightDeadline">
                         <input className="inputs" type="date" name="rightDeadline"/>

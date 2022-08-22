@@ -49,9 +49,20 @@ class App extends React.Component {
             }
         })
     }
+    onNoteSelected(id){
+        this.setState(prevState=>{
+            let upd = prevState.currentNote
+            upd = this.state.notesData.filter(note=>note.id===id)
+            console.log(upd)
+            return {
+                notesData: this.state.notesData,
+                currentNote: upd[0]
+            }
+        })
+   }
 
         render() {
-            let noteComponent = this.state.notesData.map(item => <LeftOne key={item.id} note={item}/>)
+            let noteComponent = this.state.notesData.map(item => <LeftOne key={item.id} note={item} selectNote={this.onNoteSelected.bind(this)}/>)
             console.log(noteComponent)
             return (
                 <div className="container">

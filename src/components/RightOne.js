@@ -30,7 +30,6 @@ class RightOne extends React.Component{
         })
         this.props.callback(note);
     }
-
     render() {
         if (!!this.props.currentNote){
             return(
@@ -44,7 +43,7 @@ class RightOne extends React.Component{
                     <div className="rightDeadline">
                         <input className="inputs" type="date" name="rightDeadline"/>
                     </div>
-                    <button onClick={this.onSaveClick}>Сохранить</button>
+                    <button className="saveButton" onClick={this.onSaveClick}>Сохранить</button>
                 </div>
             )
         } else {

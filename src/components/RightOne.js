@@ -10,52 +10,53 @@ class RightOne extends React.Component{
         }
         this.saveNote = this.saveNote.bind(this)
         this.onSaveClick=this.onSaveClick.bind(this)
+        this.deleteNote = this.deleteNote.bind(this)
     }
     saveNote(event) {
         const {name, value} = event.target
-        console.log(name+"-"+ value)
+        this.props.noteUpdate(this.props.currentNote.id, event)
         this.setState({
             [name]: value
         })
-        console.log(this.state.name)
     }
     onSaveClick() {
         let note = {
             name: this.state.name,
             description: this.state.description
         }
-        console.log(note)
         this.setState({
             currentNote: note
         })
-        this.props.callback(note);
+        this.props.saveClicked(note);
+    }
+    deleteNote() {
+        this.props.deleteNote(this.props.currentNote.id)
     }
     render() {
         if (!!this.props.currentNote){
             return(
                 <div className="right-items">
                     <div className="rightTitle">
-                        <input className="inputs" type="text" name="name" placeholder="Введите название.." value={this.props.currentNote.name || this.state.name} onChange={this.saveNote}/>
+                        <input className="inputs" type="text" name="name" placeholder="Введите название.." value={this.props.currentNote.name} onChange={this.saveNote}/>
                     </div>
                     <div className="rightDescription">
-                        <input className="input-description" type="text" name="description" placeholder="Введите описание.." value={this.props.currentNote.description || this.state.description} onChange={this.saveNote}/>
+                        <input className="input-description" type="text" name="description" placeholder="Введите описание.." value={this.props.currentNote.description} onChange={this.saveNote}/>
                     </div>
                     <div className="rightDeadline">
-                        <input className="inputs" type="date" name="rightDeadline"/>
+                        <input className="inputs" type="date" name="deadline" value={this.props.currentNote.deadline} onChange={this.saveNote}/>
                     </div>
                     <button className="saveButton" onClick={this.onSaveClick}>Сохранить</button>
+                    <button className="deleteButton" onClick={this.deleteNote}>Удалить</button>
                 </div>
             )
         } else {
             return(
                 <div className="right-items">
-                    <label></label>
+                    <strong className="choose-or-create">Выберите напоминание для редактирования или добавьте новое</strong>
                 </div>
             )
         }
     }
-    // showNote() {
-    // }
 }
 
 export default RightOne;

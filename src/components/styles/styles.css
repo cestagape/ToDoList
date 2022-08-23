@@ -26,7 +26,6 @@
     padding: 20px;
     display: inline;
     align-items: left;
-
 }
 .right-items {
     padding: 0;
@@ -111,7 +110,17 @@
     background-color: rgba(28,28,28,0);
     border-color: cadetblue;
     border-radius: 7px;
+}
 
+.deleteButton {
+    margin: 30px;
+    width: 150px;
+    height: 50px;
+    font-weight: bold;
+    font-size: 20px;
+    background-color: #ee2828;
+    border-color: cadetblue;
+    border-radius: 7px;
 }
 .barButton {
     text-align: start;
@@ -128,7 +137,17 @@
 }
 .barButton:focus {
     background-color: skyblue;
+}
+.main-label {
+    font-size: 30px;
+    font-weight: bold;
+    margin-left: 10%;
+    border-bottom: 1px solid #cecece;
+}
 
-
-
+.choose-or-create {
+    margin-top: 30%;
+    font-size: 30px;
+    font-weight: bold;
+    align-self: center;
 }

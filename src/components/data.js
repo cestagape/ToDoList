@@ -3,6 +3,7 @@ const notes = [
         id: 0,
         name: "Погулять с собакой",
         description: "погулять с собакой моего друга",
+        status: ,
         isChecked: true,
         isNew: false,
         deadline: "2022-09-01"
@@ -32,5 +33,5 @@ const notes = [
         deadline: "2022-09-03"
     }
 ]
-
+export const statuses = ["waiting", "in process", "done"];
 export default notes

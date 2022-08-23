@@ -15,13 +15,14 @@ class App extends React.Component {
         this.onNoteChanged = this.onNoteChanged.bind(this)
     }
 
-    newNote() {
+    newNote() { /*СОЗДАЕМ ФУНКЦИЮ ДЛЯ НОВЫХ НАПОМИНАНИЙ*/
         this.setState(prevState => {
             let upd = prevState.notesData
             let currNote = {
                 id: prevState.notesData.length,
                 name: "",
                 description: "",
+                status: "",
                 isChecked: false,
                 isNew: true,
                 deadline: new Date()
@@ -34,6 +35,7 @@ class App extends React.Component {
         })
 
     }
+
     onNoteChanged(note) {
         if (note.isNew) {
             note.id=this.state.currentNote.id
@@ -76,7 +78,8 @@ class App extends React.Component {
            }
        })
    }
-   onNoteDelete(id) {
+
+   onNoteDelete(id) { /*СОЗДАЮ ФУНКЦИЮ ДЛЯ УДАЛЕНИЯ НАПОМИНАНИЙ*/
         this.setState(prevState=>{
             let upd = prevState.notesData.filter(el => el.id !== id)
             return {
@@ -90,7 +93,7 @@ class App extends React.Component {
             return (
                 <div className="container">
                     <div className="left">
-                        <strong className="main-label">Список дел</strong>
+                        <strong className="main-label"></strong>
                         <button className="createNewTaskButton" onClick={this.newNote}>+</button>
                         {noteComponent}
                     </div>

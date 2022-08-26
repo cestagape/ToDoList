@@ -1,28 +1,29 @@
 import React from "react";
 import LeftOne from "./components/LeftOne";
 import RightOne from "./components/RightOne";
-import "./components/styles/styles.css"
-import notes from "./components/data.js"
+import "./components/styles/styles.css";
+import notes from "./components/data.js";
+import statuses from "./components/data.js";
 
 class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             notesData: notes,
-            currentNote: null
+            currentNote: null,
+            search: null
         }
         this.newNote = this.newNote.bind(this)
         this.onNoteChanged = this.onNoteChanged.bind(this)
     }
 
-    newNote() { /*СОЗДАЕМ ФУНКЦИЮ ДЛЯ НОВЫХ НАПОМИНАНИЙ*/
+    newNote() {
         this.setState(prevState => {
             let upd = prevState.notesData
             let currNote = {
                 id: prevState.notesData.length,
                 name: "",
                 description: "",
-                status: "",
                 isChecked: false,
                 isNew: true,
                 deadline: new Date()
@@ -61,6 +62,7 @@ class App extends React.Component {
             upd = this.state.notesData.filter(note=>note.id === id)
             return {
                 notesData: this.state.notesData,
+                search: this.state.search,
                 currentNote: upd[0]
             }
         })
@@ -78,6 +80,22 @@ class App extends React.Component {
            }
        })
    }
+   noteSearch(event) {
+        const {name, value} = event.target
+       this.setState(prevState=> {
+           let upd = prevState.notesData.include(this.state.search)
+           return {
+               notesData: upd
+           }
+       })
+   }
+    /*saveNote(event) { /!*Создаю функцию по сохранению напоминалки*!/
+        const {name, value} = event.target
+        this.props.noteUpdate(this.props.currentNote.id, event)
+        this.setState({
+            [name]: value
+        })
+    }*/
 
    onNoteDelete(id) { /*СОЗДАЮ ФУНКЦИЮ ДЛЯ УДАЛЕНИЯ НАПОМИНАНИЙ*/
         this.setState(prevState=>{
@@ -95,6 +113,7 @@ class App extends React.Component {
                     <div className="left">
                         <strong className="main-label"></strong>
                         <button className="createNewTaskButton" onClick={this.newNote}>+</button>
+                        <input className="searchInput" type="text" name="search" value={this.state.search} onChange={this.noteSearch} ></input>
                         {noteComponent}
                     </div>
                     <div className="right">

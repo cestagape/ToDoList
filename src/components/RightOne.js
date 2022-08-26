@@ -1,7 +1,6 @@
 import React from 'react';
-import statuses from "./data";
-
-
+import statuses from "./data.js";
+import Select from 'react-select';
 
 class RightOne extends React.Component{
     constructor(props) {
@@ -22,19 +21,6 @@ class RightOne extends React.Component{
             [name]: value
         })
     }
-    sendOptions() {
-        let xhr = new XMLHttpRequest()
-        let DONE = 4
-        let OK = 200
-        xhr.open('GET', "./data", true)
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState === DONE && xhr.status === OK) {
-                console.log(JSON.parse(xhr.responseText))
-            }
-        }
-        xhr.send()
-    }
-
     onSaveClick() {
         let note = {
             name: this.state.name,
@@ -64,8 +50,7 @@ class RightOne extends React.Component{
                     </div>
                     <button className="saveButton" onClick={this.onSaveClick}>Сохранить</button>
                     <button className="deleteButton" onClick={this.deleteNote}>Удалить</button>
-                    <select className="select" value={this.props.currentNote.status} onClick={sendOptions()} onChange={this.saveNote}>
-                    </select>
+
                 </div>
             )
         } else {

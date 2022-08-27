@@ -86,8 +86,10 @@ class App extends React.Component {
         const {name, value} = event.target
         this.setState({[name]: value})
         this.setState(prevState=> {
-           let upd = notesData.filter(el => {el.name.toLowerCase().include(this.state.search) })
-           return {
+           let upd = prevState.notesData.filter(el => el.name.includes(this.state.search))
+            console.log(upd);
+
+            return {
                notesData: upd
            }
        })

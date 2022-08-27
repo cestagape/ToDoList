@@ -11,10 +11,12 @@ class App extends React.Component {
         this.state = {
             notesData: notes,
             currentNote: null,
-            search: null
+            search: ""
         }
         this.newNote = this.newNote.bind(this)
         this.onNoteChanged = this.onNoteChanged.bind(this)
+        this.noteSearch = this.noteSearch.bind(this)
+
     }
 
     newNote() {
@@ -82,21 +84,14 @@ class App extends React.Component {
    }
    noteSearch(event) {
         const {name, value} = event.target
-       this.setState(prevState=> {
-           let upd = prevState.notesData.include(this.state.search)
+        this.setState({[name]: value})
+        this.setState(prevState=> {
+           let upd = notes.filter(el => {el.name.toLowerCase().include(this.state.search) })
            return {
                notesData: upd
            }
        })
    }
-    /*saveNote(event) { /!*Создаю функцию по сохранению напоминалки*!/
-        const {name, value} = event.target
-        this.props.noteUpdate(this.props.currentNote.id, event)
-        this.setState({
-            [name]: value
-        })
-    }*/
-
    onNoteDelete(id) { /*СОЗДАЮ ФУНКЦИЮ ДЛЯ УДАЛЕНИЯ НАПОМИНАНИЙ*/
         this.setState(prevState=>{
             let upd = prevState.notesData.filter(el => el.id !== id)

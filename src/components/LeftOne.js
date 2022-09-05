@@ -1,7 +1,7 @@
 import React from 'react';
 import "./styles/styles.css";
 
-function LeftOne(props) { /*Описываю функцию по выводу и заполнению левого столбца*/
+function LeftOne(props) { /*создаю функциональный компонент*/
     return( /*вывод */
         <div className="bar-items"> {/*Описываю блок напоминалок слева*/}
             <button className="barButton" onClick={()=>props.selectNote(props.note.id)}> {/*Делаю напоминалку кликабельной*/}

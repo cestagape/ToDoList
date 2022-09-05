@@ -2,7 +2,7 @@ import React from 'react';
 import statuses from "./data.js";
 import Select from 'react-select';
 
-class RightOne extends React.Component{ /*Описываю класс правой части*/
+class RightOne extends React.Component{ /*создаю классовый компонент правой части*/
     constructor(props) {
         super(props);
         this.state = { /*создаю состояние, которое включает в себя */
@@ -29,7 +29,7 @@ class RightOne extends React.Component{ /*Описываю класс право
         this.setState({ /*в состояние заметки передаю иноформацию, которую записал в переменную "note"*/
             currentNote: note
         })
-        this.props.saveClicked(note); /**/
+        this.props.saveClicked(note); /*Передаю состояние в корнеаой компонент*/
     }
     deleteNote() { /*метод для удаления напоминалки*/
         this.props.deleteNote(this.props.currentNote.id)/*передаю в метод id данной заметки, которую хочу удалить*/

@@ -13,17 +13,17 @@ class App extends React.Component {
             currentNote: null,
             search: ""
         }
-        this.newNote = this.newNote.bind(this)
-        this.onNoteChanged = this.onNoteChanged.bind(this)
-        this.noteSearch = this.noteSearch.bind(this)
+        this.newNote = this.newNote.bind(this) /*создаю функции, привязанные к this*/
+        this.onNoteChanged = this.onNoteChanged.bind(this) /*создаю функции, привязанные к this*/
+        this.noteSearch = this.noteSearch.bind(this) /*создаю функции, привязанные к this*/
 
     }
 
-    newNote() {
-        this.setState(prevState => {
-            let upd = prevState.notesData
-            let currNote = {
-                id: prevState.notesData.length,
+    newNote() { /*метод по созданию новой напоминалки*/
+        this.setState(prevState => { /**/
+            let upd = prevState.notesData /*создаю переменную для обно*/
+            let currNote = { /*создаю переменную, в которой хранится информация о полях напоминалки. При создании никакая информация не заполнена и галочка в чекбоксе отсутсвует*/
+                id: prevState.notesData.length, /*напоминалке присваивается id по принципу длины массива с напоминалками. Массив с объектами находится в файле data.js*/
                 name: "",
                 description: "",
                 isChecked: false,
@@ -58,7 +58,7 @@ class App extends React.Component {
             })
         }
     }
-    onNoteSelected(id){
+    onNoteSelected(id) {
         this.setState(prevState => {
             let upd = prevState.currentNote
             upd = this.state.notesData.filter(note=>note.id === id)
@@ -88,7 +88,6 @@ class App extends React.Component {
         this.setState(prevState=> {
            let upd = prevState.notesData.filter(el => el.name.includes(this.state.search))
             console.log(upd);
-
             return {
                notesData: upd
            }

@@ -30,6 +30,14 @@ const notes = [
         isChecked: false,
         isNew: false,
         deadline: "2022-09-03"
+    },
+    {
+        id: 4,
+        name: "Полить кактус",
+        description: "Кактусу грустно, его нужно полить",
+        isChecked: false,
+        isNew: false,
+        deadline: "2022-10-03"
     }
 ]
 

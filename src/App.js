@@ -31,7 +31,7 @@ class App extends React.Component { /*создаю корневой классо
             }
             upd.push(currNote) /*добавляю новую напоминалку в общий массив*/
             return {
-                notesData: upd, /*вывожу новый массив, в котором есть новая новая напоминалка*/
+                notesData: upd, /*вывожу новый массив, в котором есть новая напоминалка*/
                 currentNote: currNote /*в выводе выбранной заметкой будет та, которую я только что добавил*/
             }
         })
@@ -82,10 +82,10 @@ class App extends React.Component { /*создаю корневой классо
        })
    }
    noteSearch(event) { /*метод по поиску напоминалок*/
-        const {name, value} = event.target
-        this.setState({[name]: value}) /**/
-        this.setState(prevState=> {
-           let upd = prevState.notesData.filter(el => el.name.includes(this.state.search)) /*логика поиска.*/
+        const {name, value} = event.target /*создаю переменную*/
+        this.setState({[name]: value})
+        this.setState(prevState=> { /*передаю предыдущее состояние*/
+           let upd = prevState.notesData.filter(el => el.name.includes(this.state.search)) /*описываю логику поиска.*/
             console.log(upd);
              return {
                notesData: upd
@@ -110,7 +110,7 @@ class App extends React.Component { /*создаю корневой классо
                         <input className="searchInput" type="text" name="search" value={this.state.search} onChange={this.noteSearch}></input> {/*создаю поисковую строку, которая делает запрос в сразу при наборе*/}
                         {noteComponent}
                     </div>
-                    <div className="right">
+                    <div className="right"> {/*описываю правый компонент*/}
                         <RightOne
                             key={this.state.currentNote ? this.state.currentNote.id : -1} /*реализовал тернарный оператор, цель которого определять выбрана ли напоминалка, иначе никакой из методов в RightOne не будет работать*/
                             currentNote={this.state.currentNote}  /*передаю функцию в RightOne.js*/

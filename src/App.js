@@ -58,6 +58,7 @@ class App extends React.Component { /*создаю корневой классо
         }
     }
     onNoteSelected(id) {
+
         this.setState(prevState => {
             let upd = prevState.currentNote /*создаю временную переменную, в которой храню предыдущее значение напоминалки*/
             upd = this.state.notesData.filter(note=>note.id === id) /**/

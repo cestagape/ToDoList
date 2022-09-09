@@ -38,7 +38,7 @@ class RightOne extends React.Component{ /*создаю классовый ком
     render() { /*осуществляю рендер нижеприведенного html-кода*/
         if (!!this.props.currentNote){ /*функция "если выбрана напоминалка*/
             return(
-                <div className="right-items"> /*создаю блок с элементами правой части*/
+                <div className="right-items"> {/*создаю блок с элементами правой части*/}
                     <div className="rightTitle"> {/*создаю блок с строкой для названия заметки*/}
                         <input className="inputs" type="text" name="name" placeholder="Введите название.." value={this.props.currentNote.name} onChange={this.saveNote}/> {/*описываю строку, присваиваю классовое для css. если строка пустая, то в ней будет написано "введите название..". Значение, находящиеся в строке, принадлежит выбранной заметке. При изменениях в строке заметка автоматически сохраняется, это можно увидеть в левой части toDo листа*/}
                     </div>
